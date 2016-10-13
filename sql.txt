@@ -6,3 +6,5 @@ INNER JOIN `catalog_category_product` as cp on cp.`product_id` = p.`entity_id` a
 INNER JOIN `catalog_product_index_price` AS `price_index` ON price_index.entity_id = p.entity_id
 LEFT JOIN `catalog_product_entity_media_gallery` as pm on pm.`entity_id` = p.`entity_id` and pm.`attribute_id` = 88
 GROUP BY cp.`product_id`, pm.`entity_id`
+
+
