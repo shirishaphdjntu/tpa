@@ -1,0 +1,8 @@
+SELECT p.`entity_id`, p.`sku`, pv.`value` as name, price_index.`price` as price , pt.`value` as description, GROUP_CONCAT(DISTINCT(cp.`category_id`) SEPARATOR ', ') as categories, GROUP_CONCAT(DISTINCT(pm.`value`) SEPARATOR ', ') as imagesPath
+FROM `catalog_product_entity` as p
+INNER JOIN `catalog_product_entity_varchar` as pv on pv.`entity_id` = p.`entity_id` and     pv.`attribute_id` = 71
+INNER JOIN `catalog_product_entity_text` as pt on pt.`entity_id` = p.`entity_id` and pt.`attribute_id` = 72
+INNER JOIN `catalog_category_product` as cp on cp.`product_id` = p.`entity_id` and cp.`attribute_id` = 68
+INNER JOIN `catalog_product_index_price` AS `price_index` ON price_index.entity_id = p.entity_id
+LEFT JOIN `catalog_product_entity_media_gallery` as pm on pm.`entity_id` = p.`entity_id` and pm.`attribute_id` = 88
+GROUP BY cp.`product_id`, pm.`entity_id`
