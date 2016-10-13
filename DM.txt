@@ -1,0 +1,5 @@
+D1@M1(F)$M2(T)$M6(F)$M4(F)
+D2@M2(F)$M3(T)$M5(F)
+D3@M1(T)$M4(F)$M2(F)$M6(F)
+D4@M1(T)$M4(T)$M3(T)$M5(F)
+D5@M2(T)$M4(T)$M6(F)
